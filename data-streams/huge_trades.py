@@ -7,7 +7,7 @@ from websockets import connect
 from termcolor import cprint 
 
 # list of symbols you want to track 
-symbols = ['btcusdt', 'ethusdt', 'solusdt', 'bnbusdt', 'dogeusdt', 'wifusdt']
+symbols = ['btcusdt', 'ethusdt', 'solusdt', 'zecusdt', 'bnbusdt', 'dogeusdt', 'wifusdt']
 websocket_url_base = 'wss://fstream.binance.com/ws/'
 trades_filename = 'binance_trades.csv'
 
