@@ -55,7 +55,6 @@ async def binance_trade_stream(uri, symbol, filename, aggregator):
                 usd_size = float(data['p']) * float(data['q'])
                 trade_time = datetime.fromtimestamp(data['T']/1000, pytz.timezone('US/Eastern'))
                 readable_trade_time = trade_time.strftime('%H:%M:%S')
-
                 await aggregator.add_trade(symbol.upper().replace('USDT', ''), readable_trade_time, usd_size, data['m'])
 
             except:
