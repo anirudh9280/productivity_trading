@@ -46,7 +46,7 @@ async def binance_liquidation(uri, filename):
                         for _ in range(4):
                             cprint(output, 'black', f'on_{color}', attrs=attrs)
                     elif usd_size > 100000:
-                        starts = '*' *1
+                        stars = '*' *1
                         attrs.append('blink')
                         output = f'{stars}{output}'
                         for _ in range(2):

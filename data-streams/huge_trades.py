@@ -31,7 +31,7 @@ class TradeAggregator:
             symbol, second, is_buyer_maker = trade_key
             if second < timestamp_now and usd_size > 500000:
                 attrs = ['bold']
-                back_color = 'on__light_blue' if not is_buyer_maker else 'on_light_magenta'
+                back_color = 'on_light_blue' if not is_buyer_maker else 'on_light_magenta'
                 trade_type = "BUY" if not is_buyer_maker else 'SELL'
                 if usd_size > 3000000:
                     usd_size = usd_size / 1000000
@@ -58,7 +58,7 @@ async def binance_trade_stream(uri, symbol, filename, aggregator):
                 await aggregator.add_trade(symbol.upper().replace('USDT', ''), readable_trade_time, usd_size, data['m'])
 
             except:
-                await asyncio.slep(5)
+                await asyncio.sleep(5)
 
 async def print_aggregated_trades_every_second(aggregator):
     while True:
